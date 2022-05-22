@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import './styles/App.css';
 import { ethers } from "ethers";
 import twitterLogo from './assets/twitter-logo.svg';
+import RSymb from './assets/RSymbol.svg';
 import myEpicNft from './utils/MyEpicNFT.json';
 
-const TWITTER_HANDLE = '_buildspace';
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 
-const RAIRABLE_LINK = '';
+const CONTRACT_ADDRESS = "0x651BEFE023DdE388b7705749739f3e4D1c3638cc";
+const RAIRABLE_LINK = `https://rinkeby.rarible.com/collection/${CONTRACT_ADDRESS}/items`;
 const TOTAL_MINT_COUNT = 50;
 
 const App = () => {
@@ -123,17 +123,17 @@ const App = () => {
           {currentAccount === "" ? renderNotConnectedContainer() : renderMintUI()}
         </div>
         <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
+          <img alt="Rairable Logo" className="RSymb" src={RSymb} />
           <a
             className="footer-text"
-            href={TWITTER_LINK}
+            href={RAIRABLE_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+          >{`Visit minted NFTs From the collection Here`}</a>
         </div>
       </div>
-    </div>
-  );
-};
-
+      </div>
+      );
+    };
+    
 export default App;
